@@ -44,6 +44,7 @@ public class Main {
 		Connector loomConnector = new Connector(loomHttpProtocol);
 		loomConnector.setPort(8081);
 		service.addConnector(loomConnector);
+		loomExecutor.start();
 
 		tomcat.start();
 		tomcat.getServer().await();
