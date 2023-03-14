@@ -12,7 +12,7 @@ do
       # for RUN in 1 2 3 4 5 6 7 8 9 10 11
       for RUN in 1 2
       do
-        RESULT=`/opt/wrk/wrk -t$CONCURRENCY -c$CONCURRENCY -d10s http://localhost:$PORT/loom/overhead?exp=$EXP | grep Requests | awk '{print $2}'`
+        RESULT=`wrk -t$CONCURRENCY -c$CONCURRENCY -d10s http://localhost:$PORT/loom/overhead?exp=$EXP | grep Requests | awk '{print $2}'`
         if [ $RUN -ne 1 ]; then
           echo $CONCURRENCY $EXP $PORT $RESULT
         fi

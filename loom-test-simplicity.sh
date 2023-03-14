@@ -11,7 +11,7 @@ do
       else
         SERVLET=blocking
       fi
-      RESULT=`/opt/wrk/wrk -t$CONCURRENCY -c$CONCURRENCY -d10s http://localhost:$PORT/loom/$SERVLET | grep Requests | awk '{print $2}'`
+      RESULT=`wrk -t$CONCURRENCY -c$CONCURRENCY -d10s http://localhost:$PORT/loom/$SERVLET | grep Requests | awk '{print $2}'`
       if [ $RUN -ne 1 ]; then
         echo $CONCURRENCY $PORT $RESULT
       fi
