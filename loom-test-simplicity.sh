@@ -7,7 +7,8 @@ benchmark () {
    fi
 }
 
-for CONCURRENCY in 1 2 4 8 16 32
+#for CONCURRENCY in 1 2 4 8 16 32
+for CONCURRENCY in 32
 do
   for PORT in 8080 8081
   do
